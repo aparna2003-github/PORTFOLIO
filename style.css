@@ -236,7 +236,6 @@ nav {
   margin: 1rem;
   line-height: 1.5;
   border-radius: 0 1.5rem 1.5rem 0;
-  transition: box-shadow 0.3s ease;
 }
 
 .education-card:hover {
@@ -283,11 +282,9 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-cards:hover {
-  transform: translateY(-0.5rem);
   box-shadow: 0 0 15px rgba(0, 255, 128, 0.3);
 }
 
@@ -303,7 +300,6 @@ nav {
     stroke-width: 6;
     stroke-linecap: round;
     stroke-dasharray: 220;
-    transition: stroke-dashoffset 1s ease;
 }
 
 .html-ring {
@@ -351,7 +347,6 @@ nav {
 }
 
 .project-cards:hover {
-  transform: translateY(-0.5rem);
   box-shadow: 0 0 15px rgba(0, 255, 128, 0.3);
 }
 
