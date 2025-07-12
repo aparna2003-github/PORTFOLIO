@@ -31,6 +31,7 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+  width: 100%;
 }
 
 nav {
@@ -38,18 +39,19 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 2rem;
 }
 
 .name {
   color: var(--clr-primary-green);
   font-weight: 600;
+  margin-left: 2rem;
 }
 
 .nav-link {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin-right: 2rem;
 }
 
 .nav-link a {
@@ -60,6 +62,75 @@ nav {
 
 .nav-link a:hover {
   font-size: 1rem;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--clr-primary-green);
+  cursor: pointer;
+  z-index: 2100;
+}
+
+.slide-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: var(--clr-bg);
+  border-right: 1px solid rgba(0, 255, 136, 0.2);
+  box-shadow: 5px 0 15px rgba(0, 255, 136, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 2000;
+}
+
+.slide-menu ul {
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.slide-menu ul li a {
+  color: var(--clr-primary-green);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: font-size 0.2s;
+}
+
+.slide-menu hr {
+  border: none;
+  height: 0.1px; 
+  background-color: rgba(0, 255, 136, 0.3);
+  width: 100%;
+}
+
+.slide-menu ul li a:hover {
+  font-size: 1.1rem;
+}
+
+#menu-toggle:checked ~.slide-menu {
+  left: 0;
+}
+
+#menu-toggle:checked ~.menu-icon {
+  display: none;
+}
+
+.close-icon {
+  align-self: flex-end;
+  font-size: 1.5rem;
+  color: var(--clr-primary-green);
+  cursor: pointer;
 }
 
 #hero {
@@ -94,11 +165,11 @@ nav {
   border: 1px solid rgba(0,255,136,0.2);
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 
 .hero-content {
-  padding: 3rem 5rem;
+  padding: 4rem;
   line-height: 2rem;
   align-content: center;
 }
@@ -382,6 +453,7 @@ nav {
 }
 
 footer {
+  bottom: 0;
   text-align: center;
   padding: 2rem 1rem;
   color: var(--clr-muted-text);
@@ -390,6 +462,122 @@ footer {
   border-top: 1px solid rgba(0, 255, 136, 0.3);
 }
 
+@media (max-width:768px) {
+  .nav-link {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+  header {
+    width: 100%;
+  }
+  nav {
+    margin: 0 1.5rem;
+  }
+  .name {
+    font-size: 1rem;
+  }
+  .hero-container {
+    height: 17rem;
+    width: 85%;
+  }
+  .container-inside {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 0.5rem;
+  }
+  .hero-content {
+    padding: 2rem 0 2rem 2rem;
+    line-height: 1.5rem;
+  }
+  .hello {
+    font-size: 1rem;
+  }
+  .hero-content p {
+    font-size: 0.5rem;
+    line-height: 1.3;
+  }
+  .hero-content h1 {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+  .btn {
+    width: 10rem;
+    margin-top: 1.25rem;
+  }
+  .btn a {
+    font-size: 0.6rem;
+    line-height: 1.4rem;
+  }
+  .profile-circle {
+    width: 6.8rem;
+    height: 6.8rem;
+    padding: 0.5rem;
+  }
+  .inner-circle {
+    width: 6rem;
+    height: 6rem;
+  }
+  .profile-pic {
+    width: 6rem;
+    height: 6rem;
+  }
+  .about-content {
+    width: 85%;
+    padding: 0;
+    margin: 1rem auto;
+  }
+  .about-content p {
+    font-size: 0.7rem;
+  }
+  .education-container {
+    padding: 2rem;
+  }
+   .education-container h2{
+    font-size: 0.8rem;
+   }
+  .education-card {
+    width: 100%;
+    height: 4.5rem;
+    line-height: 1;
+  }
+  .timeline {
+    font-size: 0.8rem;
+  }
+  .education-details {
+    font-size: 0.5rem;
+    line-height: 1.5;
+  }
+  .sub-heading {
+    font-size: 0.8rem;
+    line-height: 4rem;
+  }
+  .section-container {
+    gap: 1rem;
+  }
+  .skill-cards {
+    height: 10rem;
+  }
+  .project-cards {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .project-card-container{
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+  .project-cards {
+    height: 15rem;
+  }
+  .project-cards p {
+    font-size: 0.7rem;
+  }
+  .icons{
+    margin: 2rem;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
+
